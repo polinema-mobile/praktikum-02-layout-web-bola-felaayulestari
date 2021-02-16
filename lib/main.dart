@@ -6,9 +6,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Image(
-        image: NetworkImage('https://pixnio.com/free-images/2021/02/15/2021-02-15-10-38-28-1200x1800.jpg'),
-      ),
+      home: Scaffold(
+          appBar: AppBar(title: Text("Contoh Transform")),
+          body: Container(
+            decoration: BoxDecoration(
+              image: const DecorationImage(
+                image: NetworkImage('https://pixnio.com/free-images/fauna-animals/bison-buffalo/wood-bison-or-mountain-buffalo-bison-bison-athabascae-725x529.jpg'),
+                fit: BoxFit.fitWidth,
+              ),
+              border: Border.all(
+                color: Colors.black,
+                width: 8,
+              ),
+            ),
+            height: 200,
+            width: 300,
+            margin: const EdgeInsets.only(left: 30.0, right: 30.0, top: 30),
+            transform: Matrix4.rotationZ(-0.1),
+          )),
     );
   }
 }
