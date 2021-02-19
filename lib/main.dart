@@ -3,27 +3,40 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  get column => null;
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+      ),
       home: Scaffold(
-          appBar: AppBar(title: Text("Contoh Configuration")),
-          body: Container(
-              decoration: BoxDecoration(
-                color: const Color(0xff7c94b6),
-                image: const DecorationImage(
-                  image: NetworkImage('https://pixnio.com/free-images/2018/12/02/2018-12-02-19-17-14-1200x801.jpg'),
-                  fit: BoxFit.fitWidth,
-                ),
-                border: Border.all(
-                  color: Colors.black,
-                  width: 8,
-                ),
-                borderRadius: BorderRadius.circular(12),
-              ),
-              height: 200,
-              width: 300,
-              margin: EdgeInsets.all(20))),
+        appBar: AppBar(
+          title: Text("MyApp"),
+        ),
+        body: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                column(children: [
+                  Text(
+                    "BERITA TERBARU",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                ]),
+                column(children: [
+                  Text(
+                    "PERTANDINGAN HARI INI",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                ]),
+              ],
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
