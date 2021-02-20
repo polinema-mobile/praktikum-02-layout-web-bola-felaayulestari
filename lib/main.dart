@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  get column => null;
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,67 +13,44 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text("MyApp"),
         ),
-        body: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
+        body: SingleChildScrollView(
+          child: 
+          Container(
+            margin: EdgeInsets.all(2),
+            child: Column(
               children: [
-                column(children: [
-                  Text(
-                    "BERITA TERBARU",
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                ]),
-                column(children: [
-                  Text(
-                    "PERTANDINGAN HARI INI",
-                    style: Theme.of(context).textTheme.headline6,
-                  ),
-                ]),
-              ],
-            ),
-            SizedBox(
-              width: 2
-            ),
-            Row(
-              children: [
-                Stack(
-                  children: <Widget>[
-                    Container(
-                      color: Colors.purpleAccent,
-                      alignment: Alignment.bottomLeft,
-                      child: Text("Transfer",
-                        style: TextStyle(
-                          fontSize: 15, color: Colors.black
-                        )
-                      ),
-                      width: 200.0,
-                    ),
-                    Container(
-                      color: Colors.white,
-                      alignment: Alignment.bottomCenter,
-                      child: Text("Costa Mendekat Ke Palmeiras",
-                          style: TextStyle(
-                          fontSize: 30, color: Colors.black
+                Container(
+                  margin: EdgeInsets.all(2),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Expanded(
+                        child: OutlineButton(
+                        onPressed: () {}, 
+                          child: Text(
+                            "BERITA TERBARU",
+                            style: TextStyle(fontSize: 12),
                           ),
                         ),
-                      width: 150.0,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                        image: const DecorationImage(
-                          image: NetworkImage('https://d10dnch8g6iuzs.cloudfront.net/picture/11720210213072120788'),
-                          fit: BoxFit.fitWidth,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Expanded(
+                        child: OutlineButton(
+                        onPressed: () {}, 
+                          child: Text(
+                            "PERTANDINGAN HARI INI",
+                            style: TextStyle(fontSize: 10.5),  
+                          ),
                         ),
                       ),
-                      width: 150.0,
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ],
             ),
-            
-          ],
+          ),
         ),
       ),
     );
