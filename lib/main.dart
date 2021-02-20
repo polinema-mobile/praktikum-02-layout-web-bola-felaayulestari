@@ -78,6 +78,42 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
+                SizedBox(
+                  height: 2,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black)
+                      ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        children: [
+                          Image.network('https://images.daznservices.com/di/library/GOAL/c0/68/gerard-pique-barcelona-yellow-card-2020-21_1b5pixs2oir8s1hy0nwfy1tnrz.jpg?t=1931977831&quality=100', height: 150.0, width: 200.0),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                        Text(
+                          "Pique Bilang Wasit Untungkan",
+                        ),
+                        Text(
+                          "Madrid, Koeman Tepok Jidat",
+                        ),
+                        ],
+                      ),
+                      Container(
+                        padding: EdgeInsets.fromLTRB(8,8,0,8),
+                        child: Text(
+                          "Barcelona Feb 2013, 2021",
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
