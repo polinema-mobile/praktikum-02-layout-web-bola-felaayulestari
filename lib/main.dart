@@ -53,7 +53,7 @@ class MyApp extends StatelessWidget {
                   margin: const EdgeInsets.fromLTRB(0,10,0,0),
                   decoration: BoxDecoration(
                     border: Border.all(
-                      color: Colors.purple[300])
+                      color: Colors.purpleAccent)
                       ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -64,16 +64,22 @@ class MyApp extends StatelessWidget {
                         child: Center(
                           child: Text(
                             "Costa Mendekat Ke Palmeiras",
-                            style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                            style: TextStyle(fontWeight: FontWeight.w500, fontSize: 20,),
                             ),
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.fromLTRB(8,12,336,12),
-                        color: Colors.purple[300],
-                        child: Text(
-                          "Transfer",
-                          style: TextStyle(fontSize: 15),
+                        height: 50,
+                        color: Colors.purpleAccent,
+                        child: Row(
+                          children: [
+                            Padding(padding: const EdgeInsets.all(8.10),
+                              child: Text(
+                                "Transfer",
+                                style: TextStyle(fontSize: 15),
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ],
